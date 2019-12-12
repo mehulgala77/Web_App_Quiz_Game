@@ -15,8 +15,11 @@ let questionBank = undefined;
 
 function loadQuestions() {
 
+    const category = sessionStorage.getItem("quiz-category");
+    const url = `https://opentdb.com/api.php?amount=10&category=${category}&difficulty=easy&type=multiple`;
+
     // Fetch API to fetch the questions from an external JSON file
-    fetch("questions.json")
+    fetch(url)
         .then( res => res.json() )
         .then( questionList => {
             questionBank = questionList;
@@ -46,7 +49,8 @@ function setNextQuestion() {
                         .concat(currentQuestion.correct_answer);
 
     // Set question title
-    $(".question-title").text(currentQuestion.question);
+    const decodedQuestion = decodeEntities(currentQuestion.question);
+    $(".question-title").text(decodedQuestion);
 
     // Randomly shuffle the answers
     answers = shuffle(answers);
@@ -54,7 +58,7 @@ function setNextQuestion() {
     // Set choices
     // Arrow function will return "this" as window.
     $(".choice-content").each( function (pos) {
-        $(this).text(answers[pos]);
+        $(this).text(decodeEntities(answers[pos]));
     } );    
 }
 
