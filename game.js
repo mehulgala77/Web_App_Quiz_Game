@@ -4,14 +4,26 @@ const WRONG_ANS_ICON = `<i class="fas fa-times"></i> Game Over`;
 
 // To load multiple dependent JS files.
 $.when(
-    $.getScript( "questionBank.js" ),
     $.getScript( "utility.js" )
-).done(startGame);
+).done(loadQuestions);
 
 // State Variables
 let currentQuestionIndex = 0;
 let userAnswer = null;
 let score = 0;
+let questionBank = undefined;
+
+function loadQuestions() {
+
+    // Fetch API to fetch the questions from an external JSON file
+    fetch("questions.json")
+        .then( res => res.json() )
+        .then( questionList => {
+            questionBank = questionList;
+            startGame();
+        })
+        .catch( err => console.log(err));
+}
 
 // Starter fuction
 function startGame() {
