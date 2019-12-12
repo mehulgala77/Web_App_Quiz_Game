@@ -1,0 +1,39 @@
+
+:root {
+    box-sizing: border-box;
+    /* To make font size 10px for the root, so that it is easy to refer it elsewhere in the code. */
+    font-size: 62.5%;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: #333;
+    font-family: 'Nova Cut', cursive;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+/* Flex box related classes */
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-center-main {
+    display: flex;
+    justify-content: center;
+}
+
+.flex-center-cross {
+    display: flex;
+    align-items: center;
+}

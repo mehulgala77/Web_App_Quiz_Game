@@ -1,0 +1,141 @@
+
+@import "utility.css";
+
+/* Top level tags */
+
+:root {
+    /* Color schemes */
+    --hue-neutral: 200;     /* Blue */
+    --hue-wrong: 0;         /* Red */
+    --hue-correct: 145;     /* Green */
+}
+
+body {
+    --hue: var(--hue-neutral);
+    background-color: hsl(var(--hue), 100%, 20%);
+}
+
+/* Parent container styles */
+
+.top-container {
+    width: 50vw;
+    height: 90vh;
+    margin: 0 auto;
+
+    flex-direction: column;
+}
+
+.app-title {
+    color: aliceblue;
+    font-size: 6rem;
+    font-weight: bold;
+    margin-bottom: 4rem;
+}
+
+/* Categories section */
+.main-contianer {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 2px hsl(var(--hue), 100%, 50%);
+    margin: 1rem 0;
+}
+
+.categories-section {
+    padding: 3rem 4rem 5rem;
+
+    width: 100%;
+    text-align: center;
+}
+
+.category-title {
+    color: #333;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+}
+
+/* Categories list */
+
+.category-list {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, 5rem);
+    grid-gap: 2rem;
+}
+
+.category-list > * {
+    font-size: 2rem;
+    color: #FFF;
+    font-weight: 500;
+
+    background: hsl(var(--hue), 100%, 40%);
+
+    border: 2px solid hsl(var(--hue), 100%, 20%);
+    border-radius: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+.category-list > *:hover {
+    box-shadow: 0 4px 10px 0 hsl(var(--hue), 100%, 35%);
+    transform: translateY(-0.1rem);
+    transition: All 150ms;
+    background-color: hsl(var(--hue), 100%, 25%);
+}
+
+.category-list > *.active {
+    background: hsl(var(--hue-correct), 100%, 20%);
+    border: 2px solid black;
+    /* box-shadow: 0 4px 10px 0 hsl(var(--hue-correct), 100%, 50%); */
+    transform: translateY(-0.1rem) scale(1.03);
+    transition: All 150ms;
+}
+
+/* Actions section */
+.actions {
+    padding: 1rem 0;
+    height: 5rem;
+    width: 100%;
+    margin-top: 2rem;
+
+    display: flex;
+    justify-content: center;
+}
+
+.actions > * {
+    text-decoration: none;
+    padding: 1rem 0;
+    margin: 1rem;
+    font-size: 2rem;
+
+    color: white;
+    background-color: hsl(var(--hue-correct), 100%, 35%);
+    border: 2px solid hsl(var(--hue), 100%, 20%);
+    border-radius: 5px;
+
+    width: 20rem;
+    height: 5rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Hover effect only on non-disabled elements */
+.actions > *:hover:not(.disabled) {
+    background-color: hsl(var(--hue-correct), 100%, 25%);
+    box-shadow: 0 4px 10px 0 hsl(var(--hue-correct), 100%, 50%);
+    transform: translateY(-0.1rem);
+    transition: All 150ms;
+}
+
+/* Play button */
+.actions .disabled {
+    background-color: grey;
+    cursor: not-allowed;
+    Color: #333;
+    border-color: black;
+}

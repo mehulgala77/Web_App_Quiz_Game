@@ -1,0 +1,183 @@
+
+body {
+    color: #333;
+
+    width: 100vw;
+    height: 100vh;
+
+    /* max-height: 100vh;
+    overflow: hidden; */
+
+    overflow-x: hidden;
+}
+
+p {
+    margin: 0;
+}
+
+/* Game data section */
+.game-data {
+    width: 100%;
+    font-size: 2rem;
+    color: DarkSlateGray;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1rem 2rem 1rem 1rem;
+}
+
+/* To make progress bar container and score container items align vertically. */
+.game-data > * {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: stretch;
+}
+
+.progress {
+    width: 20rem;
+    text-align: center;
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 3rem;
+    margin-top: 1.5rem;
+    border: 2px solid hsl(var(--hue), 100%, 40%);
+}
+
+.progress-bar {
+    /* width: calc(100% / 10);  */
+    width: calc( (100% / 10) * 1);
+    height: 100%;
+    background-color: hsl(var(--hue), 100%, 40%);
+}
+
+.score-value {
+    font-size: 6rem;
+    color: hsl(var(--hue), 100%, 40%);
+    text-align: center;
+}
+
+/* Question container settings */
+.question-container {
+    width: 50%;
+    background-color: white;
+    padding: 1rem 4rem;
+    border-radius: 5px;
+}
+
+.question-container > * {
+    width: 100%;
+    display: flex;
+}
+
+/* Question title */
+
+.question-title {
+    font-size: 3rem;
+    margin: 2rem 0;
+    padding-bottom: 1rem;
+}
+
+/* Question choices */
+
+.choice-container {
+    font-size: 2rem;
+    border: 2px solid rgba(0, 0, 0, 0.7);
+    margin: 2rem 0;
+    cursor: pointer;
+    width: 100%;
+
+    display: flex;
+}
+
+.choice-container:hover {
+    box-shadow: 0 4px 10px 0 hsl(var(--hue), 100%, 30%);
+    transform: translateY(-0.1rem);
+    transition: All 150ms;
+}
+
+/* Answers section */
+
+.choice-prefix {
+    padding: 0.5rem 3rem;
+    color: white;
+    background-color: hsl(var(--hue), 100%, 40%);
+}
+
+.choice-content {
+    padding: 0.5rem 2rem;
+    flex: 1;
+}
+
+.choice-content.correct {
+    background-color: hsl(var(--hue-correct), 100%, 40%);
+}
+
+.choice-content.wrong {
+    background-color: hsl(var(--hue-wrong), 100%, 40%);
+    color: #fff;
+}
+
+/* Call to Action section */
+.call-to-action {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    /* padding-top: 0.rem; */
+    padding-bottom: 1rem;
+}
+
+#next-btn {
+    text-decoration: none;
+    padding: 0.5rem 0;
+    font-size: 2rem;
+    color: white;
+
+    background-color: hsl(var(--hue-correct), 100%, 35%);
+    border: 2px solid hsl(var(--hue), 100%, 20%);
+    border-radius: 5px;
+
+    width: 15rem;
+    height: 4.5rem;
+}
+
+/* Hovered but not disabled. */
+#next-btn:hover:not(.disabled) {
+    background-color: hsl(var(--hue-correct), 100%, 25%);
+    box-shadow: 0 4px 10px 0 hsl(var(--hue-correct), 100%, 50%);
+    transform: translateY(-0.1rem);
+    transition: All 150ms;
+}
+
+/* Play button */
+#next-btn.disabled {
+    background-color: grey;
+    cursor: not-allowed;
+    Color: #333;
+    border-color: black;
+}
+
+/* Result icon */
+.result {
+    font-size: 4rem;
+    font-weight: bold;
+    padding: 0 4rem;
+    opacity: 0;
+}
+
+.result.correct {
+    color: hsl(var(--hue-correct), 100%, 30%);
+    opacity: 1;
+}
+
+.result.wrong {
+    color: hsl(var(--hue-wrong), 100%, 30%);
+    opacity: 1;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Game Page</title>
+
+    <!-- font fontawe -->
+    <script src="https://kit.fontawesome.com/f1932c16b3.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="game.css">
+
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script defer src="game.js" charset="utf-8"></script>
+</head>
+<body class="flex-center">
+    <div class="question-container main-contianer">
+        <div class="game-data">
+            <div class="progress">
+                <div class="progress-board">Question: 1 / 10</div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar"></div>
+                </div>
+            </div>
+            <div class="score">
+                <p class="score-title">Score</p>
+                <p class="score-value">0</p>
+            </div>
+        </div>
+        <h2 class="question-title">What is the question?</h2>
+        <div class="choice-container">
+            <p class="choice-prefix">A</p>
+            <p class="choice-content">Choice 1</p>
+        </div>
+        <div class="choice-container">
+            <p class="choice-prefix">B</p>
+            <p class="choice-content">Choice 2</p>
+        </div>
+        <div class="choice-container">
+            <p class="choice-prefix">C</p>
+            <p class="choice-content">Choice 3</p>
+        </div>
+        <div class="choice-container">
+            <p class="choice-prefix">D</p>
+            <p class="choice-content">Choice 4</p>
+        </div>
+        <div class="call-to-action">
+            <p class="result"><i class="fas fa-check"></i></p>
+            <a href="#" id="next-btn" class="disabled flex-center">Next</a>
+        </div>
+    </div>
+</body>
+</html>
