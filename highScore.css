@@ -1,0 +1,81 @@
+
+body {
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.highScore-container {
+    padding: 3rem 6rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 400px;
+}
+
+.highScoreTitle {
+    font-size: 4rem;
+    font-weight: bold;
+    color: hsl(var(--hue), 100%, 40%);
+    text-align: center;
+    margin: 0;
+    margin-bottom: 2rem;
+    padding-top: 3rem;
+}
+
+.userScoreList {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    list-style-type: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    font-size: 2rem;
+    margin: 2rem 0;
+}
+
+.userScoreList li {
+    margin: 0.5rem 0;
+    font-weight: normal;
+}
+
+.action-btn {
+    text-decoration: none;
+    padding: 0.5rem 0;
+    font-size: 2rem;
+    color: white;
+
+    text-align: center;
+
+    background-color: hsl(var(--hue-correct), 100%, 35%);
+    border: 2px solid black;
+    border-radius: 5px;
+
+    width: 100%;
+    height: 4.5rem;
+
+    margin: 1rem 0;
+}
+
+.action-btn:hover:not(.disabled) {
+    background-color: hsl(var(--hue-correct), 100%, 25%);
+    box-shadow: 0 4px 5px 0 hsl(var(--hue-correct), 100%, 50%);
+    transform: translateY(-0.1rem);
+    transition: All 150ms;
+}
+
+#save.disabled {
+    background-color: grey;
+    cursor: not-allowed;
+    Color: #333;
+    border-color: black;
+}

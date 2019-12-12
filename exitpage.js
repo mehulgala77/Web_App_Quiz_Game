@@ -51,7 +51,6 @@ function handleSaveScore() {
             newHighScores += currUserScore;
         }
 
-        console.log(newHighScores);
         localStorage.setItem("quizHighScore", newHighScores);        
     }
 }

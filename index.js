@@ -23,3 +23,9 @@ $("#play").on("click", storeCategory);
 function storeCategory() {
     sessionStorage.setItem("quiz-category", $("[data-code].active").attr("data-code"));
 }
+
+displayHighScore = () => {
+    // Exit call. Redirect to home page.
+    window.location.href = "exitpage.html";
+};
+$("#high-score").on("click", displayHighScore);
