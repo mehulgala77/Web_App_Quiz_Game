@@ -75,7 +75,7 @@ function userChoice() {
         correctAnswerChecklist(this);
     }
     else {
-        wrongAnswerChecklist(this);
+        wrongAnswerChecklist(this, currentQuestion.correct_answer);
     }
 }
 
@@ -100,7 +100,7 @@ function correctAnswerChecklist(currElement) {
     }
 }
 
-function wrongAnswerChecklist(currElement) {  
+function wrongAnswerChecklist(currElement, correctAnswer) {  
 
     // Change the background color of the option box.
     $(currElement).find(".choice-content").addClass("wrong");
@@ -113,14 +113,11 @@ function wrongAnswerChecklist(currElement) {
     $("#next-btn").removeClass("disabled");
     $("#next-btn").text("Exit");
 
-    setTimeout( () => {
-        // Store the score in the Session Storage
-        sessionStorage.setItem("userscore", $(".score-value").text()) ;
-
-        // Exit call. Redirect to home page.
-        window.location.href = "exitpage.html";
-
-    }, 1500);
+    $(".choice-content").each( function() {
+        if($(this).text() === correctAnswer) {
+            $(this).addClass("correct");
+        }
+    });
 }
 
 function nextAction() {
@@ -130,8 +127,11 @@ function nextAction() {
         showNextQuestion();
     }
     else {
+        // Store the score in the Session Storage
+        sessionStorage.setItem("userscore", $(".score-value").text()) ;
+
         // Exit call. Redirect to home page.
-        window.location.href = "index.html";
+        window.location.href = "exitpage.html";
     }
 }
 
