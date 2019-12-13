@@ -35,6 +35,9 @@ function startGame() {
 
     setNextQuestion(); // Set the first question
 
+    $(".loading-box").addClass("hidden"); 
+    $(".question-container").removeClass("hidden");
+
     // Listen for click on the answers.
     $(".choice-container").on("click", userChoice);
 

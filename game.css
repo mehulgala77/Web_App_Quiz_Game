@@ -15,6 +15,34 @@ p {
     margin: 0;
 }
 
+/* Loader Animation */
+.loader {
+    width: 120px;
+    height: 120px;
+    border: 12px solid crimson;
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}
+
+.loading-box {
+    flex-direction: column;
+    padding: 10rem;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+.loading-msg {
+    padding-top: 4rem;
+    font-size: 3rem;
+    color: black;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg);}
+    to { transform: rotate(360deg);}
+}
+
 /* Game data section */
 .game-data {
     width: 100%;
