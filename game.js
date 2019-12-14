@@ -78,7 +78,7 @@ function userChoice() {
         correctAnswerChecklist(this);
     }
     else {
-        wrongAnswerChecklist(this, currentQuestion.correct_answer);
+        wrongAnswerChecklist(this, decodeEntities(currentQuestion.correct_answer));
     }
 }
 
